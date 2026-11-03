@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cache Valley Snow Crew (class demo)</title>
+<meta name="description" content="Fictional business built live with USU MSLE 3500 students.">
+<style>
+  :root{--bg:#0b1220;--fg:#f5f7fb;--muted:#a9b4c9;--accent:#3ad1ff;--card:#121b2e;--line:#22304d}
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+  .hero{position:relative;min-height:78vh;display:grid;place-items:center;text-align:center;padding:48px 20px;overflow:hidden;
+    background:radial-gradient(1200px 600px at 50% -10%,#1b3358 0%,var(--bg) 70%)}
+  .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+  .hero .in{position:relative;max-width:720px}
+  .tag{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);padding:4px 10px;border-radius:99px;margin-bottom:18px}
+  h1{font-size:clamp(34px,7vw,60px);line-height:1.05;margin:0 0 16px}
+  .sub{color:var(--muted);font-size:clamp(17px,3vw,21px);margin:0 auto 28px;max-width:560px}
+  .cta{display:inline-block;background:var(--accent);color:#04121c;font-weight:700;padding:16px 28px;border-radius:12px;text-decoration:none;font-size:18px;border:0;cursor:pointer}
+  .cta:active{transform:translateY(1px)}
+  main{max-width:720px;margin:0 auto;padding:40px 20px 64px}
+  .offer{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:24px}
+  .offer b{color:var(--accent)}
+  ul{padding-left:20px;margin:12px 0 0}
+  li{margin:6px 0}
+  .done{display:none;text-align:center;margin-top:18px;color:var(--accent);font-weight:600}
+  footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 20px 40px}
+</style>
+</head>
+<body>
+<section class="hero">
+  <video id="bg" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" hidden>
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="in">
+    <span class="tag" id="tag"></span>
+    <h1 id="hook"></h1>
+    <p class="sub" id="sub"></p>
+    <button class="cta" id="cta"></button>
+    <div class="done" id="done">Got it. Normally this is where we'd text you. (Class demo, nothing was sent.)</div>
+  </div>
+</section>
+<main>
+  <div class="offer"><b id="offerLabel"></b> <span id="offer"></span>
+    <ul id="proof"></ul>
+  </div>
+</main>
+<footer>Fictional business built live with USU MSLE 3500. Variant <span id="vlabel"></span>. No data is collected.</footer>
+
+<script>
+// ---- EDIT THIS BLOCK LIVE ------------------------------------------------
+const PRESETS = {
+  a: { tag:"Logan · Cache Valley", hook:"Wake up to a clear driveway.",
+       sub:"Local students shovel your driveway and walk before you leave for work.",
+       offerLabel:"Offer:", offer:"Your first shovel is free.",
+       proof:["Student-run, local to Cache Valley","Done before 7 a.m.","Text to book, no app"], cta:"Book my free shovel" },
+  b: { tag:"Logan · Cache Valley", hook:"Your back is not a snow plan.",
+       sub:"Hand your driveway to a college kid who needs the money and has the shoulders.",
+       offerLabel:"Offer:", offer:"$15 flat per driveway, all winter.",
+       proof:["Flat price, no surprises","Student-run, local","Cancel anytime"], cta:"Save my back" },
+  c: { tag:"Storm hits Thursday", hook:"12 driveway slots left before Thursday.",
+       sub:"When the snow lands, our crew books out fast. Lock your spot now.",
+       offerLabel:"Deadline:", offer:"Book by Wednesday night.",
+       proof:["Only 12 slots this week","Student-run, local","Text to book"], cta:"Hold my slot" }
+};
+// Optional: paste a Google Form / Apps Script URL here to log clicks across the room.
+const ENDPOINT = "";
+// ---------------------------------------------------------------------------
+const q = new URLSearchParams(location.search);
+const v = (q.get("v") || "a").toLowerCase();
+const P = PRESETS[v] || PRESETS.a;
+const $ = id => document.getElementById(id);
+document.title = P.hook + " | Snow Crew (class demo)";
+$("tag").textContent = P.tag; $("hook").textContent = P.hook; $("sub").textContent = P.sub;
+$("offerLabel").textContent = P.offerLabel; $("offer").textContent = P.offer;
+$("cta").textContent = P.cta; $("vlabel").textContent = v.toUpperCase();
+P.proof.forEach(t => { const li=document.createElement("li"); li.textContent=t; $("proof").appendChild(li); });
+// Show the video only if the file exists.
+fetch("assets/hero.mp4",{method:"HEAD"}).then(r=>{ if(r.ok){ $("bg").hidden=false; } }).catch(()=>{});
+// Count a click and (optionally) report it.
+$("cta").addEventListener("click", () => {
+  try { const k="clicks_"+v; localStorage.setItem(k,(+localStorage.getItem(k)||0)+1); } catch(e){}
+  if (ENDPOINT) { try { navigator.sendBeacon(ENDPOINT, new Blob([JSON.stringify({variant:v,t:Date.now()})],{type:"text/plain"})); } catch(e){} }
+  $("done").style.display = "block";
+});
+</script>
+</body>
+</html>

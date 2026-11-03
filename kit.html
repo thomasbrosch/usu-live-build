@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job-Search Starter Kit | USU MSLE 3500</title>
+<meta name="description" content="Five things you can do this week to stand out. From Tom Broschinsky's guest talk, Nov 4 2026.">
+<style>
+  :root{--bg:#0b1220;--fg:#f5f7fb;--muted:#a9b4c9;--accent:#3ad1ff;--coral:#ff6b4a;--card:#121b2e;--line:#25345a}
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+  main{max-width:720px;margin:0 auto;padding:40px 18px 72px}
+  .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(30px,7vw,46px);line-height:1.08;margin:8px 0 12px}
+  .lead{color:var(--muted);margin:0 0 28px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 18px}
+  h2{font-size:20px;margin:0 0 4px}
+  h2 span{color:var(--accent);margin-right:8px}
+  p{margin:8px 0}
+  .muted{color:var(--muted);font-size:15px}
+  .box{background:#0b1220;border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0;font-size:15.5px;white-space:pre-wrap}
+  .bad{color:#ff9a86}.good{color:#7ee0a3}
+  button{background:var(--accent);color:#04121c;font-weight:700;border:0;border-radius:10px;padding:10px 16px;font-size:15px;cursor:pointer}
+  ul{padding-left:20px;margin:8px 0}
+  footer{color:var(--muted);font-size:13px;text-align:center;margin-top:28px}
+</style>
+</head>
+<body>
+<main>
+  <div class="tag">USU MSLE 3500 · Nov 4, 2026</div>
+  <h1>The job-search starter kit</h1>
+  <p class="lead">Five things you can do this week. Each takes under an hour. Do one tonight, not all five.</p>
+
+  <section>
+    <h2><span>1</span>Fix your LinkedIn headline</h2>
+    <p class="muted">"Student at Utah State University" is the default. It says nothing. Say what you do, for whom, and one proof point.</p>
+    <div class="box"><span class="muted">Formula</span>
+[What you do] for [who] | [one proof point] | USU [major], [year]</div>
+    <div class="box" id="t1"><span class="muted">Example (swap in your own facts)</span>
+Marketing student helping local shops get found online | Ran a $50 ad test for a campus club | USU Business, junior</div>
+    <button data-copy="t1">Copy example</button>
+  </section>
+
+  <section>
+    <h2><span>2</span>Rewrite one resume bullet with a number</h2>
+    <p class="muted">Employers skim. A number and a result stop the skim.</p>
+    <div class="box"><span class="muted">Formula</span>
+Did [what], using [how], which led to [result with a number]</div>
+    <div class="box"><span class="bad">Before:</span> Member of the marketing club
+<span class="good">After:</span> Grew club Instagram from 200 to 450 followers in 8 weeks by posting three Reels a week</div>
+    <p class="muted">No numbers yet? That's what step 4 is for.</p>
+  </section>
+
+  <section>
+    <h2><span>3</span>Send three short messages</h2>
+    <p class="muted">Find USU alumni on LinkedIn (search your school, filter by company or job title you want). Ask for advice, not a job. Follow up once after five days.</p>
+    <div class="box" id="t3">Hi [Name], I'm a [year] at USU studying [major]. I saw you work at [company] as [role]. I'm trying to learn how people get into [field]. Could I ask you two quick questions by message, or take 15 minutes on a call? Thanks either way. - [Your name]</div>
+    <button data-copy="t3">Copy message</button>
+  </section>
+
+  <section>
+    <h2><span>4</span>Make one proof piece</h2>
+    <p class="muted">Pick a campus club, a local shop, or your own side project. One goal, one small test, one page.</p>
+    <div class="box" id="t4">Goal: 
+What I tried: 
+Result (with numbers): 
+What I learned: 
+What I'd do next: </div>
+    <button data-copy="t4">Copy template</button>
+    <p class="muted">Post it on LinkedIn and link it in your headline.</p>
+  </section>
+
+  <section>
+    <h2><span>5</span>Run a weekly loop (juniors and seniors)</h2>
+    <ul>
+      <li>5 applications and 3 outreach messages every week</li>
+      <li>Track them in a sheet: company, role, date, contact, status, next step</li>
+      <li>Tailor the top three resume bullets to each posting</li>
+      <li>Every Friday, look at what got replies and change one thing. Same loop as the live build.</li>
+    </ul>
+    <p class="muted">Freshmen and sophomores: swap this for "join one club where you run something, and start your proof piece."</p>
+  </section>
+
+  <footer>Tom Broschinsky · linkedin.com/in/tombroschinsky<br>Examples above are illustrations, not real results.</footer>
+</main>
+<script>
+document.querySelectorAll("button[data-copy]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var el=document.getElementById(b.dataset.copy);
+    var t=el.innerText.replace(/^Example \(swap in your own facts\)\n/,"");
+    var done=function(){var o=b.textContent;b.textContent="Copied";setTimeout(function(){b.textContent=o},1400)};
+    try{navigator.clipboard.writeText(t).then(done,done)}catch(e){done()}
+  });
+});
+</script>
+</body>
+</html>

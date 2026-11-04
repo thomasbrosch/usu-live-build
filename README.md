@@ -21,7 +21,7 @@ No data is collected. Clicks are only counted on your own phone.
 
 ## Your 30-day head start
 
-Start here: **[30-day-head-start.md](30-day-head-start.md)**. It has a 30-day checklist, free courses, where to find work at USU and beyond, and AI prompts you can copy and paste.
+Start here: **[30-day-head-start.md](30-day-head-start.md)** ([phone-friendly page](https://thomasbrosch.github.io/usu-live-build/takeaway.html)). It has a 30-day checklist, free courses, where to find work at USU and beyond, and AI prompts you can copy and paste.
 
 Prefer your phone? Open the [job-search kit](https://thomasbrosch.github.io/usu-live-build/kit.html) for copy-and-paste templates.
 

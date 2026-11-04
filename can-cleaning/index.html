@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clean Can Cache Valley | Trash Can Cleaning for Logan Homeowners</title>
+<meta name="description" content="We scrub and sanitize your trash cans at your curb in Logan and Cache Valley. No smell, no flies, no hose. Free quote in one minute.">
+<style>
+/* ===== EDIT ME LIVE: every word customers read is in the CONFIG block in the <script> at the bottom ===== */
+:root{--ink:#14232b;--teal:#0e6f78;--teal-d:#0a4f56;--lime:#b7e24a;--sand:#f6f4ee;--mute:#5a6a72;--card:#fff;--line:#e2ded2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--sand)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+header{background:var(--teal-d);color:#fff;position:sticky;top:0;z-index:10}
+.promo{background:var(--lime);color:var(--ink);text-align:center;font-size:.95rem;font-weight:700;padding:9px 16px;line-height:1.35}
+.promo a{margin-left:8px;white-space:nowrap}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;letter-spacing:.2px}
+.logo span{color:var(--lime)}
+.btn{display:inline-block;background:var(--lime);color:var(--ink);font-weight:800;padding:14px 24px;border-radius:999px;text-decoration:none;border:0;font-size:1rem;cursor:pointer}
+.btn.sm{padding:9px 18px;font-size:.92rem}
+.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+.hero{background:radial-gradient(900px 500px at 85% 0%,#12919c 0%,transparent 60%),linear-gradient(120deg,var(--teal-d),var(--teal));color:#fff;padding:68px 0 76px}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.08;margin:0 0 16px;max-width:15em}
+.hero p.sub{font-size:1.15rem;max-width:34em;color:#d6eef0;margin:0 0 26px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;padding:0;list-style:none}
+.badges li{background:rgba(255,255,255,.14);padding:7px 14px;border-radius:999px;font-size:.9rem}
+section{padding:60px 0}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 8px;color:var(--teal-d)}
+.lead{color:var(--mute);margin:0 0 30px;max-width:38em}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{margin:0 0 6px;color:var(--teal-d)}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--lime);color:var(--ink);font-weight:800;margin-bottom:10px}
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price{font-size:2rem;font-weight:800;color:var(--teal-d)}
+.price small{font-size:.9rem;font-weight:500;color:var(--mute)}
+.card.pop{border:2px solid var(--teal);position:relative}
+.card.pop::before{content:"Most popular";position:absolute;top:-13px;left:20px;background:var(--teal);color:#fff;font-size:.78rem;font-weight:800;padding:3px 12px;border-radius:999px}
+.card ul{padding-left:20px;margin:10px 0 0;color:var(--mute)}
+.note{font-size:.88rem;color:var(--mute);margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer;color:var(--teal-d)}
+details p{margin:10px 0 0;color:var(--mute)}
+form{display:grid;gap:14px;max-width:560px}
+label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:1px solid #c9c4b3;border-radius:10px;background:#fff;width:100%}
+.quote{background:var(--teal-d);color:#fff}
+.quote h2{color:#fff}.quote .lead{color:#cde7ea}
+.quote .note{color:#cde7ea}
+footer{padding:30px 0;color:var(--mute);font-size:.9rem;text-align:center}
+@media(max-width:560px){.hero{padding:44px 0 52px}section{padding:44px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="promo" id="promo"></div>
+  <div class="wrap">
+    <div class="logo" id="brand"></div>
+    <a class="btn sm" href="#quote">Get a free quote</a>
+  </div>
+</header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <h1 id="headline"></h1>
+  <p class="sub" id="subhead"></p>
+  <div class="cta">
+    <a class="btn" href="#quote" id="cta1"></a>
+    <a class="btn ghost" href="#plans">See plans</a>
+  </div>
+  <ul class="badges" id="badges"></ul>
+</div></div>
+
+<section class="alt"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="lead">Three steps. You never touch a hose.</p>
+  <div class="grid" id="steps"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Why homeowners pick us</h2>
+  <div class="grid" id="why" style="margin-top:24px"></div>
+</div></section>
+
+<section class="alt" id="plans"><div class="wrap">
+  <h2>Simple plans</h2>
+  <p class="lead">No contracts. Pause or cancel any time.</p>
+  <div class="grid" id="plansGrid"></div>
+  <p class="note" id="priceNote"></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Common questions</h2>
+  <div id="faq" style="margin-top:24px"></div>
+</div></section>
+
+<section class="quote" id="quote"><div class="wrap">
+  <h2>Get your free quote</h2>
+  <p class="lead">Tell us about your bins. We reply within one business day.</p>
+  <form id="quoteForm">
+    <label>Your name<input name="name" required autocomplete="name"></label>
+    <label>Phone or email<input name="contact" required></label>
+    <label>Street address or neighborhood<input name="area" required autocomplete="street-address"></label>
+    <label>How many bins?
+      <select name="bins"><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+    </label>
+    <label>Which pickup day?
+      <select name="day"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Not sure</option></select>
+    </label>
+    <label>Which plan interests you?
+      <select name="plan" id="planSelect"></select>
+    </label>
+    <label>Anything we should know? (gate, HOA, bins in the garage, etc.)<textarea name="notes" rows="3"></textarea></label>
+    <button class="btn" type="submit" id="submitBtn"></button>
+    <p class="note">This opens your email app with the details filled in. Nothing is stored on this site.</p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap" id="footer"></div></footer>
+
+<script>
+/* ================== CONFIG: edit text here, nothing else ==================
+   CLASS PROOF OF CONCEPT. Business name, prices, and promo are DRAFT PLACEHOLDERS.
+   Confirm real pricing, service area, and any claims (insured, licensed, wash-water handling) before launch.
+   Test headlines with ?v=a, ?v=b, ?v=c  (see HEADLINES below). */
+const CONFIG = {
+  brand: "Clean Can <span>Cache Valley</span>",
+  contactEmail: "tom@bluecanyondigital.com", // DRAFT: swap for the class/business inbox
+  promo: {text: "Launch offer: first can cleaned free with any plan.", link: "Claim it", href: "#quote"}, // DRAFT OFFER
+  headline: "Your trash cans are the one chore you keep forgetting.",
+  subhead: "We scrub and sanitize your bins right at your curb, after pickup day. No smell, no flies, no hose in your driveway. Built for busy Cache Valley families.",
+  cta: "Get a free quote",
+  badges: ["Local to Cache Valley","Done at your curb","No contracts","Text or email to book"],
+  steps: [
+    ["Tell us your pickup day","Share your address and which day the truck comes. Takes one minute."],
+    ["We clean after the truck","We arrive once your bins are emptied and scrub, rinse, and sanitize on site."],
+    ["Bins back, smelling fresh","Your clean bins go back where you keep them. You do nothing."]
+  ],
+  why: [
+    ["Get your weekend back","Hosing out a bin is nobody's favorite job. Hand it off for less than a pizza night."],
+    ["Fewer flies, fewer smells","Clean bins mean a better garage, yard, and driveway for the kids and the dog."],
+    ["Works around your life","We come on your trash day, so there is nothing to schedule around."],
+    ["Local and accountable","A Cache Valley crew you can text. Not a national call center."]
+  ],
+  // DRAFT PRICES: validate in the class survey before treating as real.
+  plans: [
+    {name:"One-time clean", price:"$35", per:"per bin", pop:false, bullets:["Scrub, rinse, sanitize","Good for a first try","Add extra bins for less"]},
+    {name:"Seasonal", price:"$25", per:"per bin / visit", pop:true, bullets:["Every 4 weeks, spring to fall","Same pickup-day routine","Pause any time"]},
+    {name:"Pair + save", price:"$40", per:"for 2 bins / visit", pop:false, bullets:["Trash plus recycling","Every 4 weeks, spring to fall","Pause any time"]}
+  ],
+  priceNote: "Draft pricing for a class proof of concept. Final pricing depends on bin count and route density.",
+  faq: [
+    ["Do I need to be home?","No. We clean at your curb after the truck. Just leave the bins where you normally put them."],
+    ["Do you work in winter?","Cold weather is tough on any wash. Plans run spring through fall, with a winter pause. Tell us if you want a one-time clean in a warm spell."],
+    ["What about the wash water?","We plan to capture and dispose of wash water properly rather than let it run into the street. Final method to be confirmed before launch."],
+    ["What areas do you serve?","Logan and nearby Cache Valley neighborhoods to start. Put your address in the quote form and we will confirm."],
+    ["How do I pay?","After the clean. We will confirm payment options when we reply to your quote."]
+  ],
+  submit: "Request my free quote",
+  footer: "Clean Can Cache Valley · Logan, Utah · Class proof of concept for USU. Not yet an operating business."
+};
+
+/* Headline tests: ?v=a / ?v=b / ?v=c. Default is CONFIG.headline. */
+const HEADLINES = {
+  a: {headline:"Your trash cans are the one chore you keep forgetting.", cta:"Get a free quote"},
+  b: {headline:"Clean bins. Zero hose. Done on your trash day.", cta:"Book my first clean"},
+  c: {headline:"Cache Valley's cleanest curb starts with your bins.", cta:"See pricing and book"}
+};
+/* ===================================================================== */
+
+const $ = id => document.getElementById(id);
+const v = new URLSearchParams(location.search).get("v");
+const H = HEADLINES[v] || {headline:CONFIG.headline, cta:CONFIG.cta};
+
+$("brand").innerHTML = CONFIG.brand;
+$("promo").innerHTML = `${CONFIG.promo.text} <a href="${CONFIG.promo.href}">${CONFIG.promo.link}</a>`;
+$("headline").textContent = H.headline;
+$("subhead").textContent = CONFIG.subhead;
+$("cta1").textContent = H.cta;
+$("submitBtn").textContent = CONFIG.submit;
+$("footer").textContent = CONFIG.footer;
+$("priceNote").textContent = CONFIG.priceNote;
+$("badges").innerHTML = CONFIG.badges.map(b=>`<li>${b}</li>`).join("");
+$("steps").innerHTML = CONFIG.steps.map((s,i)=>`<div class="card"><div class="num">${i+1}</div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
+$("why").innerHTML = CONFIG.why.map(w=>`<div class="card"><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join("");
+$("plansGrid").innerHTML = CONFIG.plans.map(p=>`<div class="card${p.pop?" pop":""}"><h3>${p.name}</h3><div class="price">${p.price} <small>${p.per}</small></div><ul>${p.bullets.map(b=>`<li>${b}</li>`).join("")}</ul></div>`).join("");
+$("faq").innerHTML = CONFIG.faq.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("");
+$("planSelect").innerHTML = CONFIG.plans.map(p=>`<option>${p.name}</option>`).join("") + "<option>Not sure yet</option>";
+
+$("quoteForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(e.target).entries());
+  const body = `Name: ${d.name}\nContact: ${d.contact}\nAddress/area: ${d.area}\nBins: ${d.bins}\nPickup day: ${d.day}\nPlan: ${d.plan}\nHeadline variant: ${v||"default"}\nNotes: ${d.notes||"-"}`;
+  location.href = `mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent("Quote request: trash can cleaning")}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>

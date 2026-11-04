@@ -9,18 +9,21 @@
 /* ===== EDIT ME LIVE: everything customers read is in the CONFIG block in the <script> at the bottom ===== */
 :root{--navy:#0f2a4a;--gold:#f2b632;--cream:#fbf7ef;--ink:#1c2430;--mute:#5b6675;--green:#2f7d4f;--card:#fff;--line:#e6dfd0}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{margin:0;font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--cream)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 a{color:inherit}
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10}
+.promo{background:linear-gradient(90deg,#b3282d,#8f1d22);color:#fff;text-align:center;font-size:.95rem;font-weight:600;padding:9px 16px;line-height:1.35}
+.promo a{color:var(--gold);font-weight:800;margin-left:8px;white-space:nowrap}
+.promo b{letter-spacing:.3px}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .logo{font-weight:800;letter-spacing:.2px}
 .logo span{color:var(--gold)}
 .btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;padding:14px 24px;border-radius:999px;text-decoration:none;border:0;font-size:1rem;cursor:pointer}
 .btn.sm{padding:9px 18px;font-size:.92rem}
 .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
-.hero{background:linear-gradient(160deg,var(--navy),#1b4170);color:#fff;padding:64px 0 72px}
+.hero{background:linear-gradient(100deg,rgba(15,42,74,.94) 0%,rgba(15,42,74,.82) 45%,rgba(15,42,74,.35) 100%),url(family-yard.jpg) center/cover no-repeat;color:#fff;padding:64px 0 72px}
 .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:0 0 16px;max-width:15em}
 .hero p.sub{font-size:1.15rem;max-width:34em;color:#dbe6f5;margin:0 0 26px}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
@@ -51,15 +54,22 @@ input,select,textarea{font:inherit;padding:12px 14px;border:1px solid #cfc7b5;bo
 .quote label{color:#fff}
 footer{padding:30px 0;color:var(--mute);font-size:.9rem;text-align:center}
 .hide{display:none}
-@media(max-width:560px){.hero{padding:44px 0 52px}section{padding:44px 0}}
+.photos{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.photo{margin:0;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.photo img{display:block;width:100%;height:320px;object-fit:cover}
+.photo figcaption{padding:14px 18px;color:var(--mute);font-size:.95rem}
+@media(max-width:560px){.promo{font-size:.85rem}.photo img{height:240px}.hero{padding:44px 0 52px}section{padding:44px 0}}
 </style>
 </head>
 <body>
 
-<header><div class="wrap">
-  <div class="logo" id="brand"></div>
-  <a class="btn sm" href="#quote">Get a free quote</a>
-</div></header>
+<header>
+  <div class="promo" id="promo"></div>
+  <div class="wrap">
+    <div class="logo" id="brand"></div>
+    <a class="btn sm" href="#quote">Get a free quote</a>
+  </div>
+</header>
 
 <main>
 <div class="hero"><div class="wrap">
@@ -78,7 +88,13 @@ footer{padding:30px 0;color:var(--mute);font-size:.9rem;text-align:center}
   <div class="grid" id="steps"></div>
 </div></section>
 
-<section id="plans"><div class="wrap">
+<section><div class="wrap">
+  <h2 id="photoTitle"></h2>
+  <p class="lead" id="photoLead"></p>
+  <div class="photos" id="photos"></div>
+</div></section>
+
+<section class="alt" id="plans"><div class="wrap">
   <h2>Simple plans</h2>
   <p class="lead">No contracts. Pause or cancel any time.</p>
   <div class="grid" id="plansGrid"></div>
@@ -121,6 +137,14 @@ footer{padding:30px 0;color:var(--mute);font-size:.9rem;text-align:center}
 /* ================== CONFIG: edit text here, nothing else ================== */
 const CONFIG = {
   brand: "Aggie's <span>Pooper Scoopers</span>",
+  // HOLIDAY PROMO BAR (sticky). Change text/date/link here. DRAFT OFFER: confirm before launch.
+  promo: {label: "Holiday Yard Reset:", text: "$20 off your first cleanup. Book by Dec 15 and have a clean yard for guests.", link: "Claim it", href: "#quote"},
+  photoTitle: "A clean yard makes the holidays easier",
+  photoLead: "Guests, kids, pups, and cats. Everyone gets more room to enjoy it.",
+  photos: [
+    ["couch-pets.jpg","A couple on a couch with their poodle and cat","Cozy at home with the whole crew."],
+    ["hike-dog.jpg","A man and his small dog looking out over mountains","Time outside with your best friend."]
+  ],
   headline: "Get your yard back. We'll handle the poop.",
   subhead: "Weekly dog waste removal for Cache Valley homeowners. Walk barefoot, host the BBQ, let the kids play. All without lifting a scooper.",
   cta: "Get a free quote",
@@ -159,6 +183,10 @@ const CONFIG = {
 
 const $ = id => document.getElementById(id);
 $("brand").innerHTML = CONFIG.brand;
+$("promo").innerHTML = `<b>${CONFIG.promo.label}</b> ${CONFIG.promo.text} <a href="${CONFIG.promo.href}">${CONFIG.promo.link} &rarr;</a>`;
+$("photoTitle").textContent = CONFIG.photoTitle;
+$("photoLead").textContent = CONFIG.photoLead;
+$("photos").innerHTML = CONFIG.photos.map(p=>`<figure class="photo"><img src="${p[0]}" alt="${p[1]}" loading="lazy"><figcaption>${p[2]}</figcaption></figure>`).join("");
 $("headline").textContent = CONFIG.headline;
 $("subhead").textContent = CONFIG.subhead;
 $("cta1").textContent = CONFIG.cta;

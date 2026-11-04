@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aggie's Pooper Scoopers | Yard Cleanup for Cache Valley Pet Owners</title>
+<meta name="description" content="Weekly dog waste removal for Cache Valley homeowners. Get your yard back. Free quote in one minute.">
+<style>
+/* ===== EDIT ME LIVE: everything customers read is in the CONFIG block in the <script> at the bottom ===== */
+:root{--navy:#0f2a4a;--gold:#f2b632;--cream:#fbf7ef;--ink:#1c2430;--mute:#5b6675;--green:#2f7d4f;--card:#fff;--line:#e6dfd0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--cream)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;letter-spacing:.2px}
+.logo span{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;padding:14px 24px;border-radius:999px;text-decoration:none;border:0;font-size:1rem;cursor:pointer}
+.btn.sm{padding:9px 18px;font-size:.92rem}
+.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+.hero{background:linear-gradient(160deg,var(--navy),#1b4170);color:#fff;padding:64px 0 72px}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:0 0 16px;max-width:15em}
+.hero p.sub{font-size:1.15rem;max-width:34em;color:#dbe6f5;margin:0 0 26px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;padding:0;list-style:none}
+.badges li{background:rgba(255,255,255,.12);padding:7px 14px;border-radius:999px;font-size:.9rem}
+section{padding:60px 0}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 8px;color:var(--navy)}
+.lead{color:var(--mute);margin:0 0 30px;max-width:38em}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{margin:0 0 6px;color:var(--navy)}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;margin-bottom:10px}
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price{font-size:2rem;font-weight:800;color:var(--navy)}
+.price small{font-size:.9rem;font-weight:500;color:var(--mute)}
+.card.pop{border:2px solid var(--gold);position:relative}
+.card.pop::before{content:"Most popular";position:absolute;top:-13px;left:20px;background:var(--gold);color:var(--navy);font-size:.78rem;font-weight:800;padding:3px 12px;border-radius:999px}
+.card ul{padding-left:20px;margin:10px 0 0;color:var(--mute)}
+.note{font-size:.88rem;color:var(--mute);margin-top:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+summary{font-weight:700;cursor:pointer;color:var(--navy)}
+details p{margin:10px 0 0;color:var(--mute)}
+form{display:grid;gap:14px;max-width:560px}
+label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:1px solid #cfc7b5;border-radius:10px;background:#fff;width:100%}
+.quote{background:var(--navy);color:#fff}
+.quote h2{color:#fff}.quote .lead{color:#c9d6ea}
+.quote label{color:#fff}
+footer{padding:30px 0;color:var(--mute);font-size:.9rem;text-align:center}
+.hide{display:none}
+@media(max-width:560px){.hero{padding:44px 0 52px}section{padding:44px 0}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="logo" id="brand"></div>
+  <a class="btn sm" href="#quote">Get a free quote</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <h1 id="headline"></h1>
+  <p class="sub" id="subhead"></p>
+  <div class="cta">
+    <a class="btn" href="#quote" id="cta1"></a>
+    <a class="btn ghost" href="#plans">See plans</a>
+  </div>
+  <ul class="badges" id="badges"></ul>
+</div></div>
+
+<section class="alt"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="lead">Three steps. You never touch a scooper.</p>
+  <div class="grid" id="steps"></div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+  <h2>Simple plans</h2>
+  <p class="lead">No contracts. Pause or cancel any time.</p>
+  <div class="grid" id="plansGrid"></div>
+  <p class="note" id="priceNote"></p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Why homeowners pick Aggie's</h2>
+  <div class="grid" id="why" style="margin-top:24px"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Common questions</h2>
+  <div id="faq" style="margin-top:24px"></div>
+</div></section>
+
+<section class="quote" id="quote"><div class="wrap">
+  <h2>Get your free quote</h2>
+  <p class="lead">Tell us about your yard. We reply within one business day.</p>
+  <form id="quoteForm">
+    <label>Your name<input name="name" required autocomplete="name"></label>
+    <label>Phone or email<input name="contact" required></label>
+    <label>Street address or neighborhood<input name="area" required autocomplete="street-address"></label>
+    <label>How many dogs?
+      <select name="dogs"><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+    </label>
+    <label>Yard size
+      <select name="yard"><option>Small (under 2,000 sq ft)</option><option>Medium</option><option>Large (over 8,000 sq ft)</option><option>Not sure</option></select>
+    </label>
+    <label>Anything we should know? (gate code, tricky dog, etc.)<textarea name="notes" rows="3"></textarea></label>
+    <button class="btn" type="submit" id="submitBtn"></button>
+    <p class="note" style="color:#c9d6ea">This opens your email app with the details filled in. Nothing is stored on this site.</p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap" id="footer"></div></footer>
+
+<script>
+/* ================== CONFIG: edit text here, nothing else ================== */
+const CONFIG = {
+  brand: "Aggie's <span>Pooper Scoopers</span>",
+  headline: "Get your yard back. We'll handle the poop.",
+  subhead: "Weekly dog waste removal for Cache Valley homeowners. Walk barefoot, host the BBQ, let the kids play. All without lifting a scooper.",
+  cta: "Get a free quote",
+  submitLabel: "Send my quote request",
+  badges: ["Locally owned in Logan", "Gate always re-latched", "Pet-safe, no chemicals", "No contracts"],
+  steps: [
+    ["Tell us about your yard","Takes one minute. Number of dogs, yard size, gate details."],
+    ["We scoop on a set day","Same day every week or every other week. We text when we're done."],
+    ["Enjoy a clean yard","Waste is bagged and hauled away. Skip a week any time."]
+  ],
+  // DRAFT PRICES: confirm with your team before launch
+  plans: [
+    {name:"Every other week", price:"$20", per:"/visit", items:["1 to 2 dogs","Great for small yards","Text when done"]},
+    {name:"Weekly", price:"$17", per:"/visit", pop:true, items:["1 to 2 dogs","Best value per visit","Text when done","Gate always re-latched"]},
+    {name:"One-time cleanup", price:"$75", per:"and up", items:["Backed-up yard? Start fresh","Priced by yard size","Can switch to weekly after"]}
+  ],
+  priceNote: "Draft pricing for class project. Extra dogs add a small per-visit fee. Final quote after we see your yard.",
+  why: [
+    ["Locals who care","We're USU students and Cache Valley neighbors. We want your referral."],
+    ["Safe for your pets","We latch every gate and never use chemicals in your yard."],
+    ["Reliable and easy","Same day each week. Weather delay? We text you first."],
+    ["Fair and simple","One flat price per visit. No surprise fees."]
+  ],
+  faq: [
+    ["What areas do you serve?","Logan and nearby Cache Valley towns. Not sure? Ask in the form."],
+    ["Do I need to be home?","No. Leave the gate unlocked or share a code. We'll text when we're done."],
+    ["What about snow?","We scoop in winter too, as long as we can reach the yard. We'll let you know if a storm delays us."],
+    ["What if my dog is nervous around strangers?","Tell us in the form. We'll keep the gate closed and work around your schedule."],
+    ["Where does the waste go?","Bagged and taken with us. You never have to touch it or find room in your bin."]
+  ],
+  // Where quote requests go (email app opens pre-filled). CHANGE THIS to the team's real email.
+  quoteEmail: "hello@example.com",
+  footer: "&copy; 2026 Aggie's Pooper Scoopers &middot; Logan, Utah &middot; Student business project"
+};
+/* ========================================================================== */
+
+const $ = id => document.getElementById(id);
+$("brand").innerHTML = CONFIG.brand;
+$("headline").textContent = CONFIG.headline;
+$("subhead").textContent = CONFIG.subhead;
+$("cta1").textContent = CONFIG.cta;
+$("submitBtn").textContent = CONFIG.submitLabel;
+$("badges").innerHTML = CONFIG.badges.map(b=>`<li>${b}</li>`).join("");
+$("steps").innerHTML = CONFIG.steps.map((s,i)=>`<div class="card"><div class="num">${i+1}</div><h3>${s[0]}</h3><p style="margin:0;color:var(--mute)">${s[1]}</p></div>`).join("");
+$("plansGrid").innerHTML = CONFIG.plans.map(p=>`<div class="card${p.pop?' pop':''}"><h3>${p.name}</h3><div class="price">${p.price} <small>${p.per}</small></div><ul>${p.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>`).join("");
+$("priceNote").textContent = CONFIG.priceNote;
+$("why").innerHTML = CONFIG.why.map(w=>`<div class="card"><h3>${w[0]}</h3><p style="margin:0;color:var(--mute)">${w[1]}</p></div>`).join("");
+$("faq").innerHTML = CONFIG.faq.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("");
+$("footer").innerHTML = CONFIG.footer;
+
+$("quoteForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(e.target));
+  const body = `Name: ${d.name}\nContact: ${d.contact}\nArea: ${d.area}\nDogs: ${d.dogs}\nYard: ${d.yard}\nNotes: ${d.notes||"-"}`;
+  location.href = `mailto:${CONFIG.quoteEmail}?subject=${encodeURIComponent("Quote request: Aggie's Pooper Scoopers")}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>

@@ -22,7 +22,10 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .btn{display:inline-block;background:var(--lime);color:var(--ink);font-weight:800;padding:14px 24px;border-radius:999px;text-decoration:none;border:0;font-size:1rem;cursor:pointer}
 .btn.sm{padding:9px 18px;font-size:.92rem}
 .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
-.hero{background:radial-gradient(900px 500px at 85% 0%,#12919c 0%,transparent 60%),linear-gradient(120deg,var(--teal-d),var(--teal));color:#fff;padding:68px 0 76px}
+.hero{background:linear-gradient(100deg,rgba(10,79,86,.94) 0%,rgba(10,79,86,.82) 45%,rgba(10,79,86,.35) 100%),url(suburban-home.jpg) center/cover no-repeat;color:#fff;padding:68px 0 76px}
+.photo{margin:0;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.photo img{display:block;width:100%;height:380px;object-fit:cover}
+.photo figcaption{padding:14px 18px;color:var(--mute);font-size:.95rem}
 .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.08;margin:0 0 16px;max-width:15em}
 .hero p.sub{font-size:1.15rem;max-width:34em;color:#d6eef0;margin:0 0 26px}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
@@ -83,6 +86,13 @@ footer{padding:30px 0;color:var(--mute);font-size:.9rem;text-align:center}
 </div></section>
 
 <section><div class="wrap">
+  <figure class="photo">
+    <img src="bins-alley.jpg" alt="Trash bins lined up beside a row of houses" loading="lazy">
+    <figcaption id="photoCap"></figcaption>
+  </figure>
+</div></section>
+
+<section><div class="wrap">
   <h2>Why homeowners pick us</h2>
   <div class="grid" id="why" style="margin-top:24px"></div>
 </div></section>
@@ -137,6 +147,7 @@ const CONFIG = {
   subhead: "We scrub and sanitize your bins right at your curb, after pickup day. No smell, no flies, no hose in your driveway. Built for busy Cache Valley families.",
   cta: "Get a free quote",
   badges: ["Local to Cache Valley","Done at your curb","No contracts","Text or email to book"],
+  photoCaption: "Every week they sit at the curb. We make sure they don't smell like it.",
   steps: [
     ["Tell us your pickup day","Share your address and which day the truck comes. Takes one minute."],
     ["We clean after the truck","We arrive once your bins are emptied and scrub, rinse, and sanitize on site."],
@@ -186,6 +197,7 @@ $("cta1").textContent = H.cta;
 $("submitBtn").textContent = CONFIG.submit;
 $("footer").textContent = CONFIG.footer;
 $("priceNote").textContent = CONFIG.priceNote;
+$("photoCap").textContent = CONFIG.photoCaption;
 $("badges").innerHTML = CONFIG.badges.map(b=>`<li>${b}</li>`).join("");
 $("steps").innerHTML = CONFIG.steps.map((s,i)=>`<div class="card"><div class="num">${i+1}</div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
 $("why").innerHTML = CONFIG.why.map(w=>`<div class="card"><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join("");

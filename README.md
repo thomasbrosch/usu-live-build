@@ -40,6 +40,7 @@ Prefer your phone? Open the [job-search kit](https://thomasbrosch.github.io/usu-
 ## What's in this repo
 
 - `class.html`: one page that links everything from class
+- `build.html`: copy-and-paste prompts to build your own page, plus the code and a rebuild prompt for each class site
 - `index.html`: the demo page
 - `aggies-pooper-scoopers/`, `can-cleaning/`, `tidy-nest/`: the three sites built in class
 - `30-day-head-start.md`: your takeaway

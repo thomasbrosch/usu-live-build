@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Build your own | USU MSLE 3500</title>
+<meta name="description" content="Copy-and-paste AI prompts to build a one-page site like the ones from class, plus the code and a rebuild prompt for each class site.">
+<meta property="og:title" content="Build your own | USU MSLE 3500">
+<meta property="og:description" content="Copy-and-paste AI prompts to build a one-page site like the ones from class.">
+<style>
+  :root{--bg:#0b1220;--fg:#f5f7fb;--muted:#a9b4c9;--accent:#3ad1ff;--coral:#ff6b4a;--card:#121b2e;--line:#25345a}
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+  main{max-width:760px;margin:0 auto;padding:28px 18px 72px}
+  a{color:var(--accent)}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:10px}
+
+  .back{display:inline-block;font-size:15px;margin:0 0 26px}
+  .when{color:var(--accent);font-size:15px;margin:0}
+  h1{font-size:clamp(34px,8.4vw,56px);line-height:1.04;letter-spacing:-.02em;margin:8px 0 14px}
+  .lead{color:var(--muted);font-size:18px;margin:0;max-width:33em}
+  h2{font-size:23px;line-height:1.2;margin:48px 0 6px}
+  .sub{color:var(--muted);margin:0 0 18px;max-width:36em}
+
+  /* How it works: a real sequence, so it is numbered */
+  .steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:10px}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+  .steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+                    border:1px solid var(--line);color:var(--accent);font-weight:800;font-size:15px}
+  .steps span{padding-top:4px}
+
+  /* One prompt = one block */
+  .prompt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin:0 0 14px}
+  .prompt h3{font-size:19px;line-height:1.25;margin:0 0 4px}
+  .prompt h3 i{font-style:normal;color:var(--accent);margin-right:8px}
+  .why{color:var(--muted);font-size:15.5px;margin:0 0 12px}
+  pre{margin:0 0 12px;padding:14px;background:var(--bg);border:1px solid var(--line);border-radius:12px;
+      white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.5 ui-monospace,Menlo,Consolas,monospace;color:var(--fg)}
+  mark{background:none;color:var(--coral);font-weight:700}
+  button{background:var(--accent);color:#04121c;font:inherit;font-weight:700;font-size:15px;border:0;border-radius:10px;
+         padding:10px 16px;cursor:pointer}
+  button.quiet{background:transparent;color:var(--accent);border:1px solid var(--line)}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .btns a{font-size:15px}
+
+  details{margin-top:12px}
+  summary{cursor:pointer;color:var(--accent);font-size:15px;width:fit-content}
+  details pre{margin:12px 0 0}
+
+  .two{display:grid;gap:8px;margin:0 0 18px;padding:0;list-style:none;color:var(--muted);font-size:16px;max-width:38em}
+  .two b{color:var(--fg)}
+  .note{color:var(--muted);font-size:14.5px;margin:14px 0 0;max-width:40em}
+
+  .check{margin:0;padding-left:20px;max-width:38em}
+  .check li{margin:8px 0}
+
+  footer{color:var(--muted);font-size:14.5px;margin-top:56px;padding-top:20px;border-top:1px solid var(--line)}
+  footer p{margin:0 0 6px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  @media(min-width:760px){main{padding:44px 28px 96px}.prompt{padding:22px}}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="class.html">Back to everything from class</a>
+  <p class="when">USU MSLE 3500, November 4, 2026</p>
+  <h1>Build your own.</h1>
+  <p class="lead">You don't need to know how to code. You describe the page and the AI writes it. Each class site was built inside one class period.</p>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><span>Open an AI chat. Claude, ChatGPT and Gemini all work.</span></li>
+    <li><span>Copy a prompt from this page, fill in the <mark>[brackets]</mark>, and send it.</span></li>
+    <li><span>Save the code it gives you as a file named <b>index.html</b>, then open that file in your browser.</span></li>
+    <li><span>Ask for changes in plain words until you like it. "Make the headline shorter." "Use green instead."</span></li>
+  </ol>
+
+  <h2>Start from scratch</h2>
+  <p class="sub">Five prompts, in the order we'd use them. Stop after the second one and you already have a working page.</p>
+
+  <div class="prompt">
+    <h3><i>1</i>Get clear on the customer</h3>
+    <p class="why">Do this first. A page for "everyone" convinces no one.</p>
+<pre id="p1">I want to start a small business: <mark>[your idea in one sentence]</mark>. It would serve <mark>[who]</mark> in <mark>[town or area]</mark>.
+
+Before we build anything, help me get clear on the customer. Ask me up to five questions, one at a time, about who buys this, what problem it solves for them, and why they would pick me.
+
+Then sum up my answers as: the customer, their problem, my offer, and three reasons to trust me. Don't invent facts about me. If I don't know something, mark it as a guess to test.</pre>
+    <button data-copy="p1">Copy prompt</button>
+  </div>
+
+  <div class="prompt">
+    <h3><i>2</i>Build the page</h3>
+    <p class="why">This is the one that makes the site. Send it in the same chat as the first prompt.</p>
+<pre id="p2">Build me a one-page website for this business. Give me one complete HTML file with the CSS and JavaScript inside it, so I can save it as index.html and open it in a browser.
+
+The business: <mark>[name]</mark>. <mark>[What it does, in one sentence]</mark>.
+The customer: <mark>[who it's for]</mark> in <mark>[town or area]</mark>.
+The offer: <mark>[what they get and what it costs, or "help me draft pricing"]</mark>.
+
+Include these sections, in this order: a headline with one clear button, how it works in three steps, three simple plans with prices, four reasons to pick us, five common questions, and a short form to request a quote.
+
+Rules:
+- Design it for phones first. It should also look good on a laptop.
+- Put every word a customer reads in one clearly marked block at the top of the script, so I can change the words without touching the layout.
+- Pick two or three colors that fit the business and tell me why you chose them.
+- Mark every price as a draft. Don't invent reviews, awards or numbers. If you need a fact from me, ask.
+- The quote form should open the visitor's email app with their answers filled in, addressed to <mark>[your email]</mark>. Don't store anything.</pre>
+    <button data-copy="p2">Copy prompt</button>
+  </div>
+
+  <div class="prompt">
+    <h3><i>3</i>Test three headlines</h3>
+    <p class="why">The same test we ran with the Snow Crew page. One page, three headlines, see which one people click.</p>
+<pre id="p3">Add a headline test to my page. Write three versions of the headline and the button text: one that leads with the benefit, one that uses humor, and one that creates urgency.
+
+Make the page show version A, B or C when I add ?v=a, ?v=b or ?v=c to the end of the link. Keep everything else the same.
+
+Then give me a simple way to compare which version gets more clicks if I show it to 10 to 20 people.</pre>
+    <button data-copy="p3">Copy prompt</button>
+  </div>
+
+  <div class="prompt">
+    <h3><i>4</i>Add an instant quote calculator</h3>
+    <p class="why">Like the one on Tidy Nest. Good when the price depends on a few choices.</p>
+<pre id="p4">Add an instant quote calculator to my page. The visitor picks <mark>[the things that change the price, like size, how often, and add-ons]</mark> and the price updates right away.
+
+Show how the price was built, line by line. Use these starting prices: <mark>[your prices, or "suggest draft prices"]</mark>. Label the result as an estimate, not a final price.</pre>
+    <button data-copy="p4">Copy prompt</button>
+  </div>
+
+  <div class="prompt">
+    <h3><i>5</i>Put it online for free</h3>
+    <p class="why">The class sites live on GitHub Pages, which is free. This prompt walks you through it.</p>
+<pre id="p5">Walk me through putting my index.html file online for free with GitHub Pages. I'm a beginner and I have never used GitHub.
+
+Give me one step at a time and wait for me to say "done" before the next one. Start with creating an account, then a new public repository, then uploading my file, then turning on Pages in Settings. At the end, tell me what my link will be.</pre>
+    <button data-copy="p5">Copy prompt</button>
+  </div>
+
+  <h2>Start from a class page</h2>
+  <p class="sub">Faster than starting from scratch. Pick a page and choose how you want to use it.</p>
+  <ul class="two">
+    <li><b>Remix it</b> copies a prompt with that page's code attached. Fill in the brackets and the AI changes a working page to fit your idea.</li>
+    <li><b>Rebuild it</b> copies a prompt that describes the page, so you can watch the AI build it from nothing.</li>
+  </ul>
+
+  <div class="prompt">
+    <h3>Aggie's Pooper Scoopers</h3>
+    <p class="why">Yard cleanup for dog owners. Promo bar, three plans, quote form. <a href="aggies-pooper-scoopers/">Open the site</a></p>
+    <div class="btns">
+      <button data-remix="aggies-pooper-scoopers">Remix it</button>
+      <button data-copy="r-aggies">Rebuild it</button>
+      <button class="quiet" data-code="aggies-pooper-scoopers">Copy just the code</button>
+    </div>
+    <details>
+      <summary>Read the rebuild prompt</summary>
+<pre id="r-aggies">Build a one-page website for a student-run yard cleanup business. Give me one complete HTML file with the CSS and JavaScript inside it, so I can save it as index.html and open it in a browser.
+
+Business: Aggie's Pooper Scoopers. Weekly dog waste removal for homeowners in Logan and Cache Valley, Utah. It is a class project, not an operating business.
+
+Look: navy (#0f2a4a) and gold (#f2b632) on a cream background (#fbf7ef). System font. Rounded pill buttons. Cards with soft borders. Design it for phones first.
+
+Sections, in this order:
+1. A header that stays at the top. First a red promo bar: "Holiday Yard Reset: $20 off your first cleanup. Book by Dec 15 and have a clean yard for guests." with a "Claim it" link to the quote form. Under it, the business name on the left ("Pooper Scoopers" in gold) and a "Get a free quote" button on the right.
+2. A hero on a navy background. Headline: "Get your yard back. We'll handle the poop." Under it: "Weekly dog waste removal for Cache Valley homeowners. Walk barefoot, host the BBQ, let the kids play. All without lifting a scooper." Two buttons: "Get a free quote" and "See plans". Four small badges: Locally owned in Logan. Gate always re-latched. Pet-safe, no chemicals. No contracts.
+3. "How it works", three numbered cards: Tell us about your yard. We scoop on a set day. Enjoy a clean yard.
+4. "A clean yard makes the holidays easier", with room for two photos side by side, each with a short caption. Skip this section if I don't give you photos.
+5. "Simple plans", three cards: Every other week, $20 per visit. Weekly, $17 per visit, marked "Most popular". One-time cleanup, $75 and up. Note under them: "Draft pricing for class project. Extra dogs add a small per-visit fee. Final quote after we see your yard."
+6. "Why homeowners pick Aggie's", four cards: Locals who care. Safe for your pets. Reliable and easy. Fair and simple.
+7. "Common questions", five that open when tapped: What areas do you serve? Do I need to be home? What about snow? What if my dog is nervous around strangers? Where does the waste go?
+8. "Get your free quote", a navy section with a form: name, phone or email, street address or neighborhood, how many dogs, yard size, anything we should know. Sending it opens the visitor's email app with the answers filled in, addressed to <mark>[your email]</mark>. Nothing is stored.
+9. Footer: "© 2026 Aggie's Pooper Scoopers · Logan, Utah · Student business project".
+
+Rules: put every word a customer reads in one CONFIG block at the top of the script so it is easy to edit. Write one short supporting line for each card and each answer. Don't invent reviews or numbers. Leave a spot for a hero photo, but make the page look finished without one.</pre>
+    </details>
+  </div>
+
+  <div class="prompt">
+    <h3>Clean Can Cache Valley</h3>
+    <p class="why">Curbside trash can cleaning. Three plans plus a built-in headline test. <a href="can-cleaning/">Open the site</a></p>
+    <div class="btns">
+      <button data-remix="can-cleaning">Remix it</button>
+      <button data-copy="r-can">Rebuild it</button>
+      <button class="quiet" data-code="can-cleaning">Copy just the code</button>
+    </div>
+    <details>
+      <summary>Read the rebuild prompt</summary>
+<pre id="r-can">Build a one-page website for a trash can cleaning business. Give me one complete HTML file with the CSS and JavaScript inside it, so I can save it as index.html and open it in a browser.
+
+Business: Clean Can Cache Valley. We scrub and sanitize trash cans at the curb for homeowners in Logan and Cache Valley, Utah. It is a class proof of concept, not an operating business.
+
+Look: dark teal (#0a4f56) and lime (#b7e24a) on a sand background (#f6f4ee). System font. Rounded pill buttons. Cards with soft borders. Design it for phones first.
+
+Sections, in this order:
+1. A header that stays at the top. First a lime promo bar: "Launch offer: first can cleaned free with any plan." with a "Claim it" link to the quote form. Under it, the business name on the left ("Cache Valley" in lime) and a "Get a free quote" button on the right.
+2. A hero on a teal background. Headline: "Your trash cans are the one chore you keep forgetting." Under it: "We scrub and sanitize your bins right at your curb, after pickup day. No smell, no flies, no hose in your driveway. Built for busy Cache Valley families." Two buttons: "Get a free quote" and "See plans". Four small badges: Local to Cache Valley. Done at your curb. No contracts. Text or email to book.
+3. "How it works", three numbered cards: Tell us your pickup day. We clean after the truck. Bins back, smelling fresh.
+4. Room for one wide photo with the caption "Every week they sit at the curb. We make sure they don't smell like it." Skip this section if I don't give you a photo.
+5. "Why homeowners pick us", four cards: Get your weekend back. Fewer flies, fewer smells. Works around your life. Local and accountable.
+6. "Simple plans", three cards: One-time clean, $35 per bin. Seasonal, $25 per bin per visit, every 4 weeks from spring to fall, marked "Most popular". Pair + save, $40 for 2 bins per visit. Note under them: "Draft pricing for a class proof of concept. Final pricing depends on bin count and route density."
+7. "Common questions", five that open when tapped: Do I need to be home? Do you work in winter? What about the wash water? What areas do you serve? How do I pay?
+8. "Get your free quote", a teal section with a form: name, phone or email, street address or neighborhood, how many bins, which pickup day, which plan, anything we should know. Sending it opens the visitor's email app with the answers filled in, addressed to <mark>[your email]</mark>. Nothing is stored.
+9. Footer: "Clean Can Cache Valley · Logan, Utah · Class proof of concept for USU. Not yet an operating business."
+
+Headline test: when ?v=a, ?v=b or ?v=c is added to the link, swap the headline and the main button.
+A: "Your trash cans are the one chore you keep forgetting." Button: "Get a free quote".
+B: "Clean bins. Zero hose. Done on your trash day." Button: "Book my first clean".
+C: "Cache Valley's cleanest curb starts with your bins." Button: "See pricing and book".
+
+Rules: put every word a customer reads in one CONFIG block at the top of the script so it is easy to edit. Write one short supporting line for each card and each answer. Don't invent reviews or numbers, and don't claim to be licensed or insured. Leave a spot for a hero photo, but make the page look finished without one.</pre>
+    </details>
+  </div>
+
+  <div class="prompt">
+    <h3>Tidy Nest</h3>
+    <p class="why">Home cleaning for busy families. Has the instant quote calculator. <a href="tidy-nest/">Open the site</a></p>
+    <div class="btns">
+      <button data-remix="tidy-nest">Remix it</button>
+      <button data-copy="r-tidy">Rebuild it</button>
+      <button class="quiet" data-code="tidy-nest">Copy just the code</button>
+    </div>
+    <details>
+      <summary>Read the rebuild prompt</summary>
+<pre id="r-tidy">Build a one-page website for a home cleaning business with an instant quote calculator. Give me one complete HTML file with the CSS and JavaScript inside it, so I can save it as index.html and open it in a browser.
+
+Business: Tidy Nest. Recurring home cleaning for busy families with kids and pets, plus optional home organization. It is a concept page for a class project and is not taking bookings.
+
+Look: sage green (#4f7a6a, darker #365a4d) on cream (#faf7f2), with sand (#efe7da) sections and a warm orange (#e08a5b) for buttons. System font. Rounded pill buttons. Soft white cards. No photos. Design it for phones first.
+
+Sections, in this order:
+1. Top bar: "Tidy Nest" with a nest emoji on the left, and an outlined "Get my quote" button on the right.
+2. Hero in two columns on a laptop, one column on a phone. Left: a small badge, "Cleaning + organization for busy households". Headline: "Come home to a house that's already handled." Under it: "Between work, kids, and pets, the cleaning never ends. Tidy Nest gives your household a reliable recurring clean, and when you're ready, a team to organize the spaces that keep unraveling." Button: "See my price in 60 seconds". Right: a white card titled "Built for real family homes" with five checkmarks: Pet-hair and kid-mess focused checklists. Same team every visit. Kid- and pet-safe products. Optional pantry, closet, playroom and garage organizing. Flat, upfront pricing.
+3. "Why households hire us", three cards: Time back. Pets and kids, handled. Clean that stays clean.
+4. "How it works", three numbered cards: Get an instant quote. Book your first clean. Add organization.
+5. "Instant quote", a calculator. Inputs: bedrooms (1 to 6), bathrooms (1 to 4, half baths allowed), how often (weekly, every 2 weeks, monthly, one-time deep clean), pets (none to 3+), kids at home (none to 3+), and four organization add-ons with checkboxes.
+   Pricing: base price by bedrooms is $90, $110, $130, $155, $180, $205. Add $20 for each bathroom after the first. Add $10 per pet and $8 per kid, up to 3 of each. Weekly is 20% off, every 2 weeks is 10% off, monthly is full price, a one-time deep clean adds 50%. Add-ons are one-time: pantry + kitchen reset $150, closet reset $200, playroom / kids' rooms $175, garage / mudroom $250.
+   Show the estimate in a dark green box that updates right away: the price per visit, a line-by-line breakdown, and about how much per month. Label it: "Proof-of-concept estimator. Prices are illustrative."
+   Next to it, a "Join the founding-customer list" form: first name, email, ZIP code, and a "Reserve my spot" button that shows a thank-you message. It does not send anything anywhere yet.
+6. "Simple plans", three cards for a 3 bed / 2 bath home: Essential Clean, about $150 per visit. Family Plus, about $185 per visit, highlighted. Clean + Organize, custom.
+7. Footer: "Tidy Nest is a working concept name. Concept page for a USU class project. Not yet accepting bookings."
+
+Rules: write one short supporting line for each card. Don't invent reviews or numbers.</pre>
+    </details>
+  </div>
+
+  <details>
+    <summary>Read the remix prompt</summary>
+<pre id="remix">Below is the full code for a working one-page website. Keep the layout and the way it works. Change it for my business.
+
+The business: <mark>[name]</mark>. <mark>[What it does, in one sentence]</mark>.
+The customer: <mark>[who it's for]</mark> in <mark>[town or area]</mark>.
+The offer: <mark>[your plans and prices, or "help me draft them"]</mark>.
+
+Rewrite every word for my business and pick colors that fit it. Change the contact email to <mark>[your email]</mark>. Mark prices as drafts and don't invent reviews or numbers. If the page uses photo files, take them out and make it look finished without them, then tell me where a photo would help.
+
+Give me back one complete HTML file I can save as index.html.
+
+Here is the code:
+
+<mark>[paste the code here]</mark></pre>
+  </details>
+  <p class="note">Remix it fills in the code for you, so you only need to fill in the brackets at the top. The copied code doesn't include the photos, and your rebuilt page won't match ours exactly. That's fine. Make it yours.</p>
+
+  <h2>Before you share it</h2>
+  <ul class="check">
+    <li>Read everything the AI wrote. Your name goes on it.</li>
+    <li>Keep prices marked as drafts until they're real. Don't publish reviews, awards or numbers you can't back up.</li>
+    <li>Take your phone number and address out of anything you paste into an AI chat.</li>
+    <li>Make sure the quote form sends to your email, not someone else's.</li>
+  </ul>
+
+  <footer>
+    <p>From <a href="https://www.linkedin.com/in/tombroschinsky">Tom Broschinsky</a>'s guest talk in MSLE 3500 at Utah State.</p>
+    <p>More to do next: <a href="takeaway.html">your 30-day head start</a> and the <a href="kit.html">job-search starter kit</a>.</p>
+  </footer>
+  <p class="sr" role="status" id="status"></p>
+</main>
+
+<script>
+(function(){
+  var SITES = ["aggies-pooper-scoopers","can-cleaning","tidy-nest"];
+  var code = {};
+
+  // Load each class page's code up front so a tap can copy it right away.
+  SITES.forEach(function(s){
+    fetch(s + "/index.html")
+      .then(function(r){ if(!r.ok) throw new Error("load"); return r.text(); })
+      .then(function(t){ code[s] = t.replace(/[A-Za-z0-9._%+-]+@bluecanyondigital\.com/g, "you@example.com"); })
+      .catch(function(){ code[s] = false; });
+  });
+
+  function flash(b, msg){
+    if(!b.dataset.label) b.dataset.label = b.textContent;
+    b.textContent = msg;
+    document.getElementById("status").textContent = msg;
+    clearTimeout(b._t);
+    b._t = setTimeout(function(){ b.textContent = b.dataset.label; }, 2200);
+  }
+
+  // Older browsers and some in-app browsers block the modern clipboard call.
+  function legacyCopy(t){
+    var ta = document.createElement("textarea");
+    ta.value = t; ta.setAttribute("readonly", "");
+    ta.style.position = "fixed"; ta.style.top = "0"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, t.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch(e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copy(t, b){
+    var done = function(){ flash(b, "Copied"); };
+    var fail = function(){ flash(b, legacyCopy(t) ? "Copied" : "Couldn't copy"); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done, fail); }
+    else { fail(); }
+  }
+
+  function text(id){ return document.getElementById(id).textContent.trim(); }
+
+  document.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("button") : null;
+    if(!b) return;
+    if(b.dataset.copy){ copy(text(b.dataset.copy), b); return; }
+    var s = b.dataset.remix || b.dataset.code;
+    if(!s) return;
+    if(code[s] === undefined){ flash(b, "Loading, tap again"); return; }
+    if(code[s] === false){ flash(b, "Couldn't load the code"); return; }
+    var out = b.dataset.remix
+      ? text("remix").replace("[paste the code here]", function(){ return code[s]; })
+      : code[s];
+    copy(out, b);
+  });
+})();
+</script>
+</body>
+</html>

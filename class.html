@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Everything from class | USU MSLE 3500</title>
+<meta name="description" content="The three sites we built live in class on Nov 4, the headline test, and your 30-day plan. From Tom Broschinsky's guest talk at Utah State.">
+<meta property="og:title" content="Everything from class | USU MSLE 3500">
+<meta property="og:description" content="The three sites we built live in class, the headline test, and your 30-day plan.">
+<style>
+  :root{--bg:#0b1220;--fg:#f5f7fb;--muted:#a9b4c9;--accent:#3ad1ff;--coral:#ff6b4a;--card:#121b2e;--line:#25345a}
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+  main{max-width:980px;margin:0 auto;padding:40px 18px 72px}
+  a{color:var(--accent)}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:14px}
+
+  .when{color:var(--accent);font-size:15px;margin:0}
+  h1{font-size:clamp(34px,8.4vw,60px);line-height:1.04;letter-spacing:-.02em;margin:8px 0 14px;max-width:13em}
+  .lead{color:var(--muted);font-size:18px;margin:0;max-width:34em}
+
+  h2{font-size:23px;line-height:1.2;margin:48px 0 6px}
+  .sub{color:var(--muted);margin:0 0 16px;max-width:36em}
+
+  /* The three class sites: thumbnail left on phones, on top on wide screens */
+  .sites{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .site{display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:center;
+        background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;
+        color:inherit;text-decoration:none;height:100%}
+  .site:hover{border-color:var(--accent)}
+  .site img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:top;
+            border-radius:10px;border:1px solid var(--line);background:#0b1220}
+  .slot{color:var(--coral);font-size:14px;font-weight:700;margin:0 0 2px}
+  .site h3{font-size:19px;line-height:1.2;margin:0 0 4px}
+  .site p.what{color:var(--muted);font-size:15.5px;line-height:1.45;margin:0}
+  .go{display:inline-block;margin-top:10px;background:var(--accent);color:#04121c;font-weight:700;
+      border-radius:10px;padding:8px 14px;font-size:15px}
+  .note{color:var(--muted);font-size:14.5px;margin:14px 0 0;max-width:40em}
+
+  /* Plain link rows for the headline test and the take-home pages */
+  .rows{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:640px}
+  .row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;
+       background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+       color:inherit;text-decoration:none}
+  .row:hover{border-color:var(--accent)}
+  .letter{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+          background:var(--bg);border:1px solid var(--line);color:var(--accent);font-weight:800}
+  .row b{display:block;font-size:17.5px;line-height:1.3}
+  .row small{display:block;color:var(--muted);font-size:14.5px;margin-top:2px}
+  .row.plain{grid-template-columns:1fr}
+
+  footer{color:var(--muted);font-size:14.5px;margin-top:56px;padding-top:20px;border-top:1px solid var(--line);max-width:640px}
+  footer p{margin:0 0 6px}
+
+  @media(min-width:760px){
+    main{padding:64px 28px 96px}
+    .sites{grid-template-columns:repeat(3,1fr);gap:18px}
+    .site{grid-template-columns:1fr;align-items:start;padding:14px;gap:14px}
+    .site img{border-radius:12px}
+    .site h3{font-size:21px}
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="when">USU MSLE 3500, November 4, 2026</p>
+  <h1>Everything from class, in one place.</h1>
+  <p class="lead">The three sites we built live, the headline test, and your 30-day plan. Tap anything to open it.</p>
+
+  <h2>The sites we built in class</h2>
+  <p class="sub">Each one went from an idea to a live website before class ended.</p>
+  <ul class="sites">
+    <li>
+      <a class="site" href="aggies-pooper-scoopers/">
+        <img src="assets/class/aggies-pooper-scoopers.jpg" width="780" height="1040" alt="Phone view of the Aggie's Pooper Scoopers site. Headline: Get your yard back. We'll handle the poop.">
+        <div>
+          <p class="slot">7:30 class</p>
+          <h3>Aggie's Pooper Scoopers</h3>
+          <p class="what">Weekly yard cleanup for dog owners in Cache Valley.</p>
+          <span class="go">Open the site</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="site" href="can-cleaning/">
+        <img src="assets/class/can-cleaning.jpg" width="780" height="1040" alt="Phone view of the Clean Can Cache Valley site. Headline: Your trash cans are the one chore you keep forgetting.">
+        <div>
+          <p class="slot">9:00 class</p>
+          <h3>Clean Can Cache Valley</h3>
+          <p class="what">Trash cans scrubbed and sanitized right at the curb.</p>
+          <span class="go">Open the site</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="site" href="tidy-nest/">
+        <img src="assets/class/tidy-nest.jpg" width="780" height="1040" alt="Phone view of the Tidy Nest site. Headline: Come home to a house that's already handled.">
+        <div>
+          <p class="slot">10:30 class</p>
+          <h3>Tidy Nest</h3>
+          <p class="what">Home cleaning for busy families, with an instant quote calculator.</p>
+          <span class="go">Open the site</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <p class="note">These are class concepts, not running businesses. The prices on them are drafts.</p>
+
+  <h2>The headline test</h2>
+  <p class="sub">One made-up business, the Cache Valley Snow Crew, with three different headlines. Open all three. Which one would you click?</p>
+  <ul class="rows">
+    <li><a class="row" href="./?v=a"><span class="letter">A</span><span><b>Wake up to a clear driveway.</b><small>Leads with the benefit</small></span></a></li>
+    <li><a class="row" href="./?v=b"><span class="letter">B</span><span><b>Your back is not a snow plan.</b><small>Leads with humor</small></span></a></li>
+    <li><a class="row" href="./?v=c"><span class="letter">C</span><span><b>12 driveway slots left before Thursday.</b><small>Leads with urgency</small></span></a></li>
+  </ul>
+
+  <h2>Your next 30 days</h2>
+  <p class="sub">Everything here is free. Pick one thing and start this week.</p>
+  <ul class="rows">
+    <li><a class="row plain" href="takeaway.html"><span><b>Your 30-day marketing head start</b><small>A week-by-week plan, free courses, where to find work, and AI prompts you can copy.</small></span></a></li>
+    <li><a class="row plain" href="kit.html"><span><b>The job-search starter kit</b><small>Five things you can do this week. Each takes under an hour.</small></span></a></li>
+  </ul>
+
+  <footer>
+    <p>From <a href="https://www.linkedin.com/in/tombroschinsky">Tom Broschinsky</a>'s guest talk in MSLE 3500 at Utah State.</p>
+    <p>Curious how these pages are made? <a href="https://github.com/thomasbrosch/usu-live-build">The code is on GitHub</a>, and you can copy it for your own idea.</p>
+  </footer>
+</main>
+</body>
+</html>

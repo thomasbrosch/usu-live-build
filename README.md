@@ -1,5 +1,7 @@
 # USU MSLE 3500 Live Build
 
+**Were you in class? Start here:** https://thomasbrosch.github.io/usu-live-build/class.html
+
 A small marketing test we built live in class on Nov 4, 2026. The business (the Cache Valley Snow Crew) is made up. The skills are real.
 
 ## Try it
@@ -37,6 +39,7 @@ Prefer your phone? Open the [job-search kit](https://thomasbrosch.github.io/usu-
 
 ## What's in this repo
 
+- `class.html`: one page that links everything from class
 - `index.html`: the demo page
 - `aggies-pooper-scoopers/`, `can-cleaning/`, `tidy-nest/`: the three sites built in class
 - `30-day-head-start.md`: your takeaway

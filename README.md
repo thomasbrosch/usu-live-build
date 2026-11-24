@@ -10,6 +10,16 @@ A small marketing test we built live in class on Nov 4, 2026. The business (the 
 
 Each version has a different headline. Which one would you click?
 
+## Sites we built in class
+
+Three more sites, each built live in class on Nov 4, 2026 from a business idea:
+
+- **Aggie's Pooper Scoopers** (yard cleanup for pet owners): https://thomasbrosch.github.io/usu-live-build/aggies-pooper-scoopers/
+- **Clean Can Cache Valley** (curbside trash can cleaning): https://thomasbrosch.github.io/usu-live-build/can-cleaning/
+- **Tidy Nest** (home cleaning for busy families, with a quote calculator): https://thomasbrosch.github.io/usu-live-build/tidy-nest/
+
+These are class proofs of concept, not operating businesses. Prices are drafts.
+
 ## Make your own copy
 
 1. Click **Fork** (top right) to copy this repo to your GitHub account.
@@ -28,6 +38,7 @@ Prefer your phone? Open the [job-search kit](https://thomasbrosch.github.io/usu-
 ## What's in this repo
 
 - `index.html`: the demo page
+- `aggies-pooper-scoopers/`, `can-cleaning/`, `tidy-nest/`: the three sites built in class
 - `30-day-head-start.md`: your takeaway
 - `kit.html`: job-search templates
 - `VIDEO_PROMPTS.md`: the prompts we used for the hero video
